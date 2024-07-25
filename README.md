@@ -79,7 +79,7 @@ public class VendRunner {
 
 Here's the UML class diagram for our Vending Machine Application:
 
-![Vending Machine UML Diagram](https://imgur.com/UyPr8AP)
+![Vending Machine UML Diagram](/assets/UML.png)
 
 This diagram shows the relationships between the classes in our system, including inheritance, composition, and dependencies.
 
