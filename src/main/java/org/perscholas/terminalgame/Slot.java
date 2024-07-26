@@ -4,7 +4,10 @@ public class Slot<T extends Product> {
     private T product;
     private int quantity;
 
-    public Slot(T product, int quantity) {
+    public Slot(T product, int quantity) throws IllegalArgumentException {
+        if (product == null || quantity < 0) {
+            throw new IllegalArgumentException("Order something bro..");
+        }
         this.product = product;
         this.quantity = quantity;
     }
@@ -13,7 +16,10 @@ public class Slot<T extends Product> {
         return product;
     }
 
-    public void setProduct(T product) {
+    public void setProduct(T product) throws IllegalArgumentException {
+        if (product == null) {
+            throw new IllegalArgumentException("No product specified smh..");
+        }
         this.product = product;
     }
 
@@ -21,7 +27,10 @@ public class Slot<T extends Product> {
         return quantity;
     }
 
-    public void setQuantity(int quantity) {
+    public void setQuantity(int quantity) throws IllegalArgumentException {
+        if (quantity < 0) {
+            throw new IllegalArgumentException("No quantity specified smh..");
+        }
         this.quantity = quantity;
     }
 

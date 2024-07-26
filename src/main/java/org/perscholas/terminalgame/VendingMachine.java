@@ -13,11 +13,19 @@ public class VendingMachine {
         this.slots = slots;
     }
 
-    public void addProduct(String code, Slot<?> slot){
+    public void addProduct(String code, Slot<?> slot) throws IllegalArgumentException {
+        if (code == null || code.isEmpty() ) {
+            throw new IllegalArgumentException("code cannot be null or empty");
+        }else if(slot == null) {
+            throw new IllegalArgumentException("slot cannot be null");
+        }
         slots.put(code, slot);
     }
 
-    public Product dispenseProduct(String code){
+    public Product dispenseProduct(String code) throws IllegalArgumentException {
+        if (code == null || code.isEmpty() ) {
+            throw new IllegalArgumentException("code cannot be null or empty");
+        }
         if (slots.containsKey(code)) { // if code exists ⬇️
             if(slots.get(code).getQuantity() > 0){ // if greater than 0 then ->
                 slots.get(code).setQuantity(slots.get(code).getQuantity() - 1); // decrement
