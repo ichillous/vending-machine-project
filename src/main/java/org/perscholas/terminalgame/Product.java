@@ -4,7 +4,12 @@ public class Product {
     private String name;
     private double price;
 
-    public Product(String name, double price) {
+    public Product(String name, double price) throws IllegalArgumentException {
+        if (name == null || name.isEmpty()) {
+            throw new IllegalArgumentException("Product name cannot be null or empty");
+        }else if(price < 0) {
+            throw new IllegalArgumentException("Product price cannot be negative");
+        }
         this.name = name;
         this.price = price;
     }
@@ -13,7 +18,10 @@ public class Product {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(String name) throws IllegalArgumentException {
+        if ((name == null || name.matches("^[^0-9]+$")) || name.isEmpty()) {
+            throw new IllegalArgumentException("Product name cannot be null or empty");
+        }
         this.name = name;
     }
 
@@ -21,7 +29,10 @@ public class Product {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(double price) throws IllegalArgumentException {
+        if (price < 0) {
+            throw new IllegalArgumentException("Product price cannot be negative");
+        }
         this.price = price;
     }
 
