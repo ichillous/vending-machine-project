@@ -22,6 +22,11 @@ public class Product {
         if ((name == null || name.matches("^[^0-9]+$")) || name.isEmpty()) {
             throw new IllegalArgumentException("Product name cannot be null or empty");
         }
+        /*
+        { else if (!name.matches("[a-zA-Z]+")) {
+            trow new IllegalArgumentException("Product name can contain only letters ");
+        }
+         */
         this.name = name;
     }
 

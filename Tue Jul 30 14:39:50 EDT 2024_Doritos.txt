@@ -1,0 +1,3 @@
+Product name :	 Doritos
+Product price :	 1.99
+Product timestamp :	 Tue Jul 30 14:39:50 EDT 2024
